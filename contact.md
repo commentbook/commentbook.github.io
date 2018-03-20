@@ -6,18 +6,19 @@ permalink: /contact/
 
 > StartTime: 2018-03-19, ModifyTime: 2018-03-19
 
-## Mail
-<mailto:lidaxiang0@outlook.com>
+## 1. 邮箱
 
-<mailto:cad314@126.com>
+#### 投稿事宜(submit for publication)
+<mailto:submit@commentbook.org>
 
-<mailto:0lidaxiang@gmail.com>
+#### 广告事宜(advertisement)
+<mailto:ad@commentbook.org>
 
-## Linkin
-[www.linkedin.com/in/lidaxiang](https://www.linkedin.com/in/lidaxiang)
+#### 其他支持或合作(Other questions)
+<mailto:support@commentbook.org>
 
-## WeChat
+#### 加入我们团队(Add to us)
+<mailto:lidaxiang@commentbook.org>
+
+## 2. WeChat
 ID: ldx765514164
-
-## Facebook
-[www.facebook.com/0lidaxiang](https://www.facebook.com/0lidaxiang)
