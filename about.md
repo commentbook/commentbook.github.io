@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: About
 permalink: /about/
 date:   2018-03-20 17:22:57 +0800
@@ -13,4 +13,4 @@ mail:  lidaxiang0@outlook.com
 
 [个人主页](www.lidaxiang.cn)
 
-本网站中除了研究论文(一般会为 PDF 格式)以外，若无特别说明，发表的文章均遵循 CC-BY-NC-SA 协议。
+本网站中若无特别说明，发表的文章均遵循 CC-BY-NC-SA 协议。
