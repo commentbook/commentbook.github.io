@@ -2,17 +2,15 @@
 layout: page
 title: About
 permalink: /about/
+date:   2018-03-20 17:22:57 +0800
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+这个网站主要是会发布对网络小说的评论。
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+欢迎志同道合的朋友联系我。
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+mail:  lidaxiang0@outlook.com
 
+[个人主页](www.lidaxiang.cn)
 
-[jekyll-organization]: https://github.com/jekyll
+本网站中除了研究论文(一般会为 PDF 格式)以外，若无特别说明，发表的文章均遵循 CC-BY-NC-SA 协议。

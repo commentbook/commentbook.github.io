@@ -1,26 +1,16 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2018-03-17 18:25:09 +0800
-categories: jekyll update
+title:  "Welcome to 书评网!"
+date:   2018-03-20 17:22:57 +0800
+categories: index
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+这个网站主要是会发布对网络小说的评论。
 
-Jekyll also offers powerful support for code snippets:
+欢迎志同道合的朋友联系我。
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+mail:  lidaxiang0@outlook.com
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+[个人主页](www.lidaxiang.cn)
 
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+本网站中除了研究论文(一般会为 PDF 格式)以外，若无特别说明，发表的文章均遵循 CC-BY-NC-SA 协议。
