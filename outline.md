@@ -1,7 +1,10 @@
 ---
 layout: default
+title: 评论目录
 permalink: /outline/
 ---
+
+<br>
 
 <div id='cat_cloud'>
 {% for cat in site.categories %}

@@ -1,25 +1,53 @@
 ---
-layout: homePage 
-title: Home 
+layout: homePage
+title: Home
 ---
 
 <div class="content">
   <div class="catalogue">
     {% for post in paginator.posts %}
+    {% if post.isTop == true%}
     <a href="{{ post.url  }}" class="catalogue-item">
-      <div>
-        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-        <h1 class="catalogue-title">{{ post.title | prepend: site.baseurl }}</h1>
+      <div >
+
+          <div class="catalogue-title">
+            {{ post.title | prepend: site.baseurl }}
+            <time style="font-size: 0.5em;" datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%b %d, %Y" }}</time>
+          </div>
+
         <div class="catalogue-line"></div>
 
-        <p>
-          {{ post.content | strip_html | truncatewords: 10 }}
-          <!-- {{ post.excerpt }} -->
-        </p>
+        <div>
+          <!-- {{ post.content | strip_html | truncatewords: 30 }} -->
+          {{ post.excerpt | strip_html | truncate: 43}}
+        </div>
 
       </div>
     </a>
+    {% endif %}
     {% endfor %}
+
+    {% for post in paginator.posts %}
+    {% if post.isTop != true %}
+    <a href="{{ post.url  }}" class="catalogue-item">
+      <div >
+          <div class="catalogue-title">
+            {{ post.title | prepend: site.baseurl }}
+            <time style="font-size: 0.5em;" datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%b %d, %Y" }}</time>
+          </div>
+
+        <div class="catalogue-line"></div>
+
+        <div>
+          <!-- {{ post.content | strip_html | truncatewords: 30 }} -->
+          {{ post.excerpt | strip_html | truncate: 43}}
+        </div>
+
+      </div>
+    </a>
+    {% endif %}
+    {% endfor %}
+
   </div>
 
   {% include turnPage.html %}

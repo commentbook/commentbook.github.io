@@ -1,7 +1,10 @@
 ---
 layout: default
+title: 小说目录
 permalink: /tags/
 ---
+
+<br>
 
 <div id='tag_cloud'>
 {% for tag in site.tags %}

@@ -1,5 +1,5 @@
 # Site settings
-title:          书评网
+title:          书评
 description:    "主要是评论网络小说，配合微信公众号。"
 baseurl:        ""
 url:            "http://www.commentbook.org"
@@ -24,10 +24,14 @@ plugins:
 
 # Permalinks
 permalink:      /:year-:month-:day/:title
-paginate:       5
 
-excerpt_separator: '<!---more--->'
+# 首页显示的文章分页，每页数量
+paginate:       20
 
+# 文章摘要标识符
+excerpt_separator: "<!---more--->"
+
+timezone: China/Shanghai
 # categories:
 #   - sssss
 #   - wowww
