@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+{% include head.html %}
+
+
+<body>
+  <!-- <div class="backgroundImg">
+  </div> -->
+
+<!-- <div class="fullimg"> -->
+
+<div><img id="fullback" class="backgroundImg" src="/images/backend.jpg" /></div>
+
+<div id="mobileDivfixed" class="mobileDivfixed">
+{% include nav.html %}
+</div>
+
+  <div id="divfixed" class="divfixed">
+    <nav class="nav ">
+      <div class="nav-container" >
+        <a href="{{ site.baseurl | prepend: site.baseurl }}/">
+          <h2 class="nav-title">{{ site.title }} </h2>
+        </a>
+        <ul>
+          <li ><a href="{{ site.baseurl | prepend: site.baseurl }}/">Home</a></li>
+          <li><a href="{{ '/outline' | prepend: site.baseurl }}/">Outline</a></li>
+          <li><a href="{{ '/tags' | prepend: site.baseurl }}/">Tags</a></li>
+          <!-- <li><a href="{{ site.baseurl }}/">Posts</a></li> -->
+          <li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
+          <li><a href="{{ '/contact' | prepend: site.baseurl }}">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <div id="aboutUsText" class="container aboutUsText" >
+
+    <div class="columns spacing" >
+      <div class="column half">
+        <h1>Commenting Network-Novels </h1>
+      </div>
+    </div>
+
+    <div class="columns spacing">
+      <div class="column half">
+        <p class="post-hero center-text spacing" style="">
+          <span  style="font-size: 2em;">{{ site.posts.size}} </span>篇评论文章
+          <span style="margin: 0px 15px;font-size: 3em;">|</span>
+          <span  style="font-size: 2em;">{{ site.tags.size}} </span>篇小说的评论
+        </p>
+      </div>
+    </div>
+
+    <div class="columns spacing">
+      <div class="column half">
+        <p class="post-hero center-text spacing" style="font-size: 1.2em;">
+          使命：<strong>  评论</strong>网络小说，，<strong>推荐</strong>给你优秀、好看的小说。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+</body>
+
+</html>
