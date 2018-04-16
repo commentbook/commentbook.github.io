@@ -2,7 +2,9 @@
 layout: post
 title:  斗破苍穹
 date:   2018-04-03 12:22:57
-categories: 斗破苍穹
+categories:
+- 斗破苍穹
+- 强烈
 tag: 斗破苍穹
 author: 荒岛书生
 ---
