@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "带着仓库到大明"
 date:   2018-05-21 12:17:01
 categories:

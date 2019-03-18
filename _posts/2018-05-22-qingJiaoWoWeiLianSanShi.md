@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "请叫我威廉三世"
 date:   2018-05-22 12:17:05
 categories:

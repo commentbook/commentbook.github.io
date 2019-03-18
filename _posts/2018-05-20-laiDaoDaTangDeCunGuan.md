@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "来到大堂的村官"
 date:   2018-05-20 12:17:05
 categories:

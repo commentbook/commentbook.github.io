@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "星河贵族"
 date:   2018-05-12 12:17:57
 categories:

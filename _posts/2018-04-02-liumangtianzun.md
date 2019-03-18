@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "流氓天尊"
 date:   2018-04-02 22:17:57
 categories:

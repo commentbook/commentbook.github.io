@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "诸天万界反派聊天群"
 date:   2018-05-25 12:17:05
 categories:

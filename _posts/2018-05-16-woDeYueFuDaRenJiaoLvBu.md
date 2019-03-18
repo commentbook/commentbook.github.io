@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "我的岳父大人叫吕布"
 date:   2018-05-16 21:17:57
 categories:

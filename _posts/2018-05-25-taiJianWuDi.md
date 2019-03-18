@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "太监武帝"
 date:   2018-05-25 12:17:03
 categories:

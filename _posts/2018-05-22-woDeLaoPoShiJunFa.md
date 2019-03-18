@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "我的老婆是军阀"
 date:   2018-05-22 12:17:08
 categories:

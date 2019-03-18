@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "就问你气不气"
 date:   2018-05-23 12:17:03
 categories:

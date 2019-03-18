@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "异界之风流大法师"
 date:   2018-04-27 21:17:57
 categories:

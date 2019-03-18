@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "诸天最强BOSS"
 date:   2018-05-25 12:17:06
 categories:

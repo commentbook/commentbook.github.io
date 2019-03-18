@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "网游之纵横天下"
 date:   2018-05-26 13:17:05
 categories:
@@ -7,7 +7,11 @@ categories:
 - 非常强烈
 tag:
 - 高武
-
+# cover: /assets/images/cover2.jpg
+article_header:
+  type: cover
+  image:
+    src: /docs/assets/images/cover2.jpg
 author: 荒岛书生
 ---
 
@@ -16,6 +20,7 @@ author: 荒岛书生
 > 本书完本时间: 2011-07-20
 
 《网游之纵横天下》强烈推荐。
+
 <!---more--->
 
 ## 简介

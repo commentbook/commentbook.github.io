@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "重生之大秦"
 date:   2018-05-13 12:17:57
 categories:

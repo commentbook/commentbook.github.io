@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "天珠变"
 date:   2018-05-03 12:17:57
 categories:

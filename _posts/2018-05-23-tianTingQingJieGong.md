@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "天庭清洁工"
 date:   2018-05-23 12:17:04
 categories:

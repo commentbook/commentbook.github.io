@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "秦皇纪"
 date:   2018-05-13 21:17:57
 categories:

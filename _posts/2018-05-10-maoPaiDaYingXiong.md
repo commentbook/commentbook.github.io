@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "冒牌大英雄"
 date:   2018-05-10 12:17:57
 categories:

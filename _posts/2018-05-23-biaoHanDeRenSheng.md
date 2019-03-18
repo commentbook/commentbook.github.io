@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "彪悍的人生"
 date:   2018-05-23 12:17:01
 categories:

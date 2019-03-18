@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "悟空传"
 date:   2018-05-24 12:17:01
 categories:

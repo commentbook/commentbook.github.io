@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "重生之最强暴君"
 date:   2018-05-05 12:17:57
 categories:

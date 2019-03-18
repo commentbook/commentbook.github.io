@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "新大明帝国"
 date:   2018-05-21 12:17:04
 categories:

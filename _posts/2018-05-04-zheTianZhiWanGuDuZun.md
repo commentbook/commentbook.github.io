@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "遮天之万古独尊"
 date:   2018-05-04 21:17:57
 categories:

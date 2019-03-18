@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "我真不是开玩笑"
 date:   2018-05-25 12:17:04
 categories:

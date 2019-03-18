@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "德意志崛起之路"
 date:   2018-05-22 12:17:04
 categories:

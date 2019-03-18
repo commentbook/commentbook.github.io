@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "主神欢迎你"
 date:   2018-05-09 21:17:57
 categories:

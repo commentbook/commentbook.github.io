@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "重生在穿越者故乡"
 date:   2018-05-25 12:17:01
 categories:

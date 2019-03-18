@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "我从盛唐来"
 date:   2018-05-23 12:17:05
 categories:

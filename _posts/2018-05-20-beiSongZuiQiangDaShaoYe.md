@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "北宋最强大少爷"
 date:   2018-05-20 12:17:01
 categories:

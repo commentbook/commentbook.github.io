@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "大唐烈"
 date:   2018-05-20 12:17:04
 categories:

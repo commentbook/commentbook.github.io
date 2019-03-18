@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "重生都市之我是仙二代"
 date:   2018-04-28 12:17:57
 categories:

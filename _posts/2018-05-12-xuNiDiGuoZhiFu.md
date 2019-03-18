@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "虚拟帝国之父"
 date:   2018-05-12 21:17:57
 categories:

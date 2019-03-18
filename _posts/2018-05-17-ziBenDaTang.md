@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "资本大唐"
 date:   2018-05-17 21:17:57
 categories:

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "鸿蒙至尊"
 date:   2018-05-04 12:17:57
 categories:

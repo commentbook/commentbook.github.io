@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "民国之钢铁狂潮"
 date:   2018-05-21 12:17:02
 categories:

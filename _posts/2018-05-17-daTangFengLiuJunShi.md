@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "大唐风流军师"
 date:   2018-05-17 12:17:57
 categories:

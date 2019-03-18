@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "重启末世"
 date:   2018-05-07 12:17:57
 categories:

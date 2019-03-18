@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "大秦帝师"
 date:   2018-05-14 12:17:57
 categories:

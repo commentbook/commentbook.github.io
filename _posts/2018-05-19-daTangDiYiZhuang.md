@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "大唐第一庄"
 date:   2018-05-19 12:17:57
 categories:

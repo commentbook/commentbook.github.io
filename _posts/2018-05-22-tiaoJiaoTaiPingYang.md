@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "调教太平洋"
 date:   2018-05-22 12:17:07
 categories:

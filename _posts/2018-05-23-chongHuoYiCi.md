@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "重活一次"
 date:   2018-05-23 12:17:02
 categories:

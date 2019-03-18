@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "辛亥大英雄"
 date:   2018-05-22 12:17:10
 categories:

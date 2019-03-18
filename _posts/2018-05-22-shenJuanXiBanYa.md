@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "神眷西班牙"
 date:   2018-05-22 12:17:06
 categories:

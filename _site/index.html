@@ -1,501 +1,1162 @@
-<!DOCTYPE html>
-<html lang="zh-cmn-Hans">
-<head>
+<!DOCTYPE html><html lang="zh">
+  <head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><title>主页 - 书评网</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="baidu-site-verification" content="caCw8YhNRb" />
-  
+<meta name="description" content="评论和点评网络小说。
+">
+<link rel="canonical" href="http://localhost:4000/"><link rel="alternate" type="application/rss+xml" title="书评网" href="/feed.xml"><!-- start favicons snippet, use https://realfavicongenerator.net/ --><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png"><link rel="manifest" href="/assets/site.webmanifest"><link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#fc4d50"><link rel="shortcut icon" href="/assets/favicon.ico">
 
-  <title>
-    
-      书评
-    
-  </title>
+<meta name="msapplication-TileColor" content="#ffc40d"><meta name="msapplication-config" content="/assets/browserconfig.xml">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/main.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+<meta name="theme-color" content="#ffffff">
+<!-- end favicons snippet --><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" ><!-- start custom head snippets -->
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-</head>
+<!-- end custom head snippets --><script>(function() {
+  window.isArray = function(val) {
+    return Object.prototype.toString.call(val) === '[object Array]';
+  };
+  window.isString = function(val) {
+    return typeof val === 'string';
+  };
 
+  window.decodeUrl = function(str) {
+    return str ? decodeURIComponent(str.replace(/\+/g, '%20')) : '';
+  };
 
+  window.hasEvent = function(event) {
+    return 'on'.concat(event) in window.document;
+  };
 
-<body>
-  <!-- <div class="backgroundImg">
-  </div> -->
+  window.isOverallScroller = function(node) {
+    return node === document.documentElement || node === document.body || node === window;
+  };
 
-<!-- <div class="fullimg"> -->
+  window.isFormElement = function(node) {
+    var tagName = node.tagName;
+    return tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+  };
 
-<div><img id="fullback" class="backgroundImg" src="/images/backend.jpg" /></div>
+  window.pageLoad = (function () {
+    var loaded = false, cbs = [];
+    window.addEventListener('load', function () {
+      var i;
+      loaded = true;
+      if (cbs.length > 0) {
+        for (i = 0; i < cbs.length; i++) {
+          cbs[i]();
+        }
+      }
+    });
+    return {
+      then: function(cb) {
+        cb && (loaded ? cb() : (cbs.push(cb)));
+      }
+    };
+  })();
+})();
+(function() {
+  window.throttle = function(func, wait) {
+    var args, result, thisArg, timeoutId, lastCalled = 0;
 
-<div id="mobileDivfixed" class="mobileDivfixed">
-<nav class="nav">
-  <div class="nav-container">
-    <a href="/">
-      <h2 class="nav-title">书评 </h2>
-    </a>
-    <ul>
-      <li><a href="/">首页</a></li>
-      <li><a href="/outline/">评论目录</a></li>
-      <li><a href="/tags/">小说目录</a></li>
-      <li><a href="/about">关于我们</a></li>
-      <li><a href="/joinus/">加入我们</a></li>
-      <li><a href="/contact">联系</a></li>
-      <li><a href="/donate">捐赠</a></li>
-    </ul>
+    function trailingCall() {
+      lastCalled = new Date;
+      timeoutId = null;
+      result = func.apply(thisArg, args);
+    }
+    return function() {
+      var now = new Date,
+        remaining = wait - (now - lastCalled);
 
-  </div>
-</nav>
+      args = arguments;
+      thisArg = this;
 
-</div>
+      if (remaining <= 0) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+        lastCalled = now;
+        result = func.apply(thisArg, args);
+      } else if (!timeoutId) {
+        timeoutId = setTimeout(trailingCall, remaining);
+      }
+      return result;
+    };
+  };
+})();
+(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
 
-  <div id="divfixed" class="divfixed">
-    <nav class="nav ">
-      <div class="nav-container" >
-        <a href="/">
-          <h2 class="nav-title">书评 </h2>
-        </a>
-        <ul>
-          <li><a href="/">首页</a></li>
-          <li><a href="/outline/">评论目录</a></li>
-          <li><a href="/tags/">小说目录</a></li>
-          <li><a href="/about">关于我们</a></li>
-          <li><a href="/joinus/">加入我们</a></li>
-          <li><a href="/contact">联系</a></li>
-          <li><a href="/donate">捐赠</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
 
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script><script>
+  (function() {
+    var TEXT_VARIABLES = {
+      version: '2.2.4',
+      sources: {
+        font_awesome: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css',
+        jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+        leancloud_js_sdk: '//cdn1.lncld.net/static/js/3.4.1/av-min.js',
+        chart: 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js',
+        gitalk: {
+          js: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.js',
+          css: 'https://cdn.bootcss.com/gitalk/1.2.2/gitalk.min.css'
+        },
+        valine: 'https://unpkg.com/valine/dist/Valine.min.js',
+        mathjax: 'https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML',
+        mermaid: 'https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js'
+      },
+      site: {
+        toc: {
+          selectors: 'h1,h2,h3'
+        }
+      },
+      paths: {
+        search_js: '/assets/search.js'
+      }
+    };
+    window.TEXT_VARIABLES = TEXT_VARIABLES;
+  })();
+</script></head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root"><div class="page__main js-page-main page__viewport cell cell--auto">
 
-  <div id="aboutUsText" class="container aboutUsText" >
-    <div class="columns spacing" >
-      <div class="column half">
-        <h1>Commenting Network-Novels </h1>
-      </div>
-    </div>
+      <div class="page__main-inner"><div class="page__header d-print-none"><header class="header"><div class="main">
+      <div class="header__title">
+        <div class="header__brand"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24">
+<style type="text/css">
+	.st0{fill:#515151;}
+</style>
+<path class="st0" d="M1.7,22.3c5.7-5.7,11.3-5.7,17,0c3.3-3.3,3.5-5.3,0.8-6c2.7,0.7,3.5-1.1,2.3-5.6s-3.3-5.2-6.3-2.1
+	c3-3,2.3-5.2-2.1-6.3S7,1.8,7.7,4.6C7,1.8,5,2.1,1.7,5.3C7.3,11,7.3,16.7,1.7,22.3"/>
+</svg><a title="评论和点评网络小说。
+" href="/">书评网</a></div><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></div><nav class="navigation">
+        <ul><li class="navigation__item"><a href="/archive.html">归档</a></li><li class="navigation__item"><a href="/about.html">关于</a></li><li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li></ul>
+      </nav></div>
+  </header>
+</div><div class="page__content"><div class ="main"><div class="grid grid--reverse">
 
-    <div class="columns spacing">
-      <div class="column half">
-        <p class="post-hero center-text spacing">
-          <a href="/outline/" class="font_2em a_red_color">88 </a>篇评论文章
-          <span class="divingLine">|</span>
-          <a href="/tags/" class="font_2em a_red_color">5 </a>篇小说的评论
-        </p>
-      </div>
-    </div>
+              <div class="col-aside d-print-none js-col-aside"></div>
 
-    <div class="columns spacing">
-      <div class="column half">
-        <p class="post-hero center-text spacing font_1_2em">
-          使命：<strong>  评论</strong>网络小说，，<strong>推荐</strong>给你优秀、好看的小说。
-        </p>
-      </div>
-    </div>
-  </div>
+              <div class="col-main cell cell--auto"><!-- start custom main top snippet -->
 
-  <main>
-    <div class="content">
-  <div class="catalogue">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    <a href="/2018-05-26/wangYouZhiZongHengTianXia" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            网游之纵横天下
-            <time style="font-size: 0.5em;" datetime="2018-05-26 13:17:05 +0000" class="catalogue-time">May 26, 2018</time>
-          </div>
-
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 17k小说网链接 本书完本时间: 2011-07-20 《网游之纵横天下》强烈推荐。 简介 作者是失落叶，网游小说的顶尖人物，《网游之纵横天下》是成名作之一，网游类小说典型的主角套路。 主角是“轻狂书生”，曾经在以前的著名游戏里是神一样的游戏玩家，后来结尾在书中假设的游戏“灵恸”中也是第一高手，拥有各种超级娴熟的游戏技巧和天赋的落魄青年。 女主女配有多位，故事开始被男主在路边捡回醉酒的富家大小姐“凌雪”是双胞胎之一，女主们在游戏里也都是高手，当然性格基本都有点呆萌或高冷等等特点。她们也是因为各种原因聚集在一起，每个人几乎都有家世显赫的背景或者曲折的故事，这也是推动剧情发展的重要因素，也是本文轻松愉快吸引人的地方。 男主靠着才华吸引富家女嫁人，这是吸引人最常用最好用的套路之一。 男女主因为一次醉酒捡回家照顾而偶遇，接着发生一些其他事情导致男女主都进入了一款神奇的游戏 - “灵恸”，并且开启了一起住一起组队开始了职业游戏的生涯。 男主运气爆棚创建了隐藏的罕见的游戏角色身份 - “龙语者”，后期这种角色身份会给男主带来强大的杀伤力和掌控全局的能力。 接着因为男主和女主们纠缠更多，女主们几乎都是富豪家庭出身的美女，和家里有着各种各样的情况，不可避免地很多时候给了男主帮忙的机会。当然这款游戏是可以赚到现实中的金钱的，所以最后是大家一起成了现实中的富豪并且收获感情。 创新性 这是本人第一次看的网游类小说，非常精彩，游戏、感情和生活一步一步升级发展，有时候甚至以为游戏中就是现实。 男女主互动基本符合逻辑，游戏才华横溢的男主和美貌无双的女主们，每一次互动都是吸引年轻读者们的爆点，挑动读者的内心情感世界。 游戏内容描述详细，刻画细节很具有真实感，不会让人觉得游戏只是屏幕里的无聊东西，大大改变了我对游戏的认知。 明明是网游文，却让作者写的生动盎然，以为是穿越文。 个人推荐语 《网游之纵横天下》轻松愉快，游戏和真实生活交织和谐，细节刻画和情感脉络发展把握很好。尤其对于没有玩过游戏的读者，可谓是了解游戏的一个窗口。 参考价值所在简介 优异才能的男主，路边捡回醉酒的富家大小姐，这种情节也只能在小说里看看，娱乐文。 男主不卑不亢的待人处事方法和生活态度值得学习，网游比较贴近现实生活，但首先你得有异于常人的才华，所以努力吧。 评价... -->
-          
-  本书作者:  天堂不寂寞
+<!-- end custom main top snippet --><article itemscope itemtype="http://schema.org/WebPage"><header style="display:none;"><h1>主页</h1></header><meta itemprop="headline" content="主页"><meta itemprop="author" content="书评网"/><div class="js-article-content"><div class="layout--articles"><div class="article-list items items--divided"><article class="item"><div class="item__content">
+          <header><a href="/%E7%BD%91%E6%B8%B8%E4%B9%8B%E7%BA%B5%E6%A8%AA%E5%A4%A9%E4%B8%8B/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/wangYouZhiZongHengTianXia.html"><h2 itemprop="headline" class="item__header">网游之纵横天下</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  17k小说网链接
-本书完本时间: ...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-26/minDiaoJuYiWenLu" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            民调局异闻录
-            <time style="font-size: 0.5em;" datetime="2018-05-26 12:17:08 +0000" class="catalogue-time">May 26, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 耳东水寿 本书链接: 起点网链接 本书完本时间: 2011-07-20 《民调局异闻录》强烈推荐。 简介 《民调局异闻录》如题所示，描写的是主角如何遇到并解决的一个个超自然事件，可能包括僵尸、巨型化生物、巫术等。神秘白发人是“民调局”的高层领导和顶尖武力人员，也是一个活了上千年的“不死之身”。 在经历“干尸复活”事件后，沈辣被调入一个叫“民俗事务调查研究局”的神秘机构，开始接触到一系列用科学无法解释的神秘离奇案件。 创新性 小说融合了东方古代民间妖魔鬼怪的故事和基本元素，结合现代考古学的发展和西方某些神秘学的内容，少见的以第一人称的视角带领读者进入一个个离奇的事件中，共同体验惊险和刺激感，如果读者胆子够大的话读起来别有一番趣味。 个人推荐语 同创新性。 参考价值所在简介 基本综合了巫术、僵尸、盗墓内容，是我们将来面临的可能性之一，但同时从现代科学的角度又可以基本否定存在，所以参考价值折中。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3... -->
-          
-  本书作者:  耳东水寿
+《网游之纵横天下》强烈推荐。</div><p><a href="/%E7%BD%91%E6%B8%B8%E4%B9%8B%E7%BA%B5%E6%A8%AA%E5%A4%A9%E4%B8%8B/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/wangYouZhiZongHengTianXia.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月26日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-26T21:17:05+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E6%B0%91%E8%B0%83%E5%B1%80%E5%BC%82%E9%97%BB%E5%BD%95/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/minDiaoJuYiWenLu.html"><h2 itemprop="headline" class="item__header">民调局异闻录</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  耳东水寿
 本书链接:  起点网链接
-本书完本时间: 2011...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-26/SHDSZZuiQiangZhuZai" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            神话都市之最强主宰
-            <time style="font-size: 0.5em;" datetime="2018-05-26 12:17:04 +0000" class="catalogue-time">May 26, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 任平生 本书链接: 起点网链接 本书完本时间: 2011-07-20 《神话都市之最强主宰》强烈推荐。 简介 《神话都市之最强主宰》是我见过脑路大开的一本小说，小说主角穿越到平行世界，平行世界里没有我们这个地球上的各种仙侠小说。 此时，平行世界的地球被大道（也许是某种高级文明）纳入一个类似游戏的空间，可以根据人类脑海里所设想的功法把它具现化，也就是让这本功法变成真实可以修炼的。 穿越后仍然记得我们这个地球上各种仙侠小说里功法的主角从此大展宏图，凭借此优势一路碾压，走上巅峰。 遗憾的是作者因为经济原因，最终还是去找了份专职工作。 创新性 此小说优秀在于脑回路大开的设计了这种具现化功法的类似主神的空间，核心思想其实突出了知识、想象力的重要性。 如果你拥有了别人没有的知识领域，那么你的优势将会是领先他人一个层级的。 如果你拥有了别人没有的想象力，这会大大增加你成功的可能性。 个人推荐语 《神话都市之最强主宰》内容轻松愉快，印象中书里没有什么阴暗面的表现，强烈推荐阅读。但的确对最后没有完结感到遗憾 参考价值所在简介 不排除高等文明对地球设下类似游戏的可能性。但微乎其微。 对于个人来说，如果领悟其中埋藏的创新性思想，还是有些帮助的。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　... -->
-          
-  本书作者:  任平生
+《民调局异闻录》强烈推荐。</div><p><a href="/%E6%B0%91%E8%B0%83%E5%B1%80%E5%BC%82%E9%97%BB%E5%BD%95/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/minDiaoJuYiWenLu.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月26日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-26T20:17:08+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E7%A5%9E%E8%AF%9D%E9%83%BD%E5%B8%82%E4%B9%8B%E6%9C%80%E5%BC%BA%E4%B8%BB%E5%AE%B0/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/SHDSZZuiQiangZhuZai.html"><h2 itemprop="headline" class="item__header">神话都市之最强主宰</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  任平生
 本书链接:  起点网链接
-本书完本时间: 2011-...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-26/lunHui1984" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            轮回1984
-            <time style="font-size: 0.5em;" datetime="2018-05-26 12:17:02 +0000" class="catalogue-time">May 26, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 海桐 本书链接: 百度百科 本书完本时间: 2016-02-21 《轮回1984》强烈推荐。 简介 《轮回1984》是一本优秀的传统穿越小说，典型的主角套路：出生即全能、身体素质超越常人、大脑全方位发达、凭借上世的记忆纵横商界。 创新性 作者似乎对于摩托车、汽车行业有所研究，所以本文基本点也是在汽车、摩托车行业，从八十年代一路发展到21世纪，这也许是一个了解中国改革开放以来车子的发展机会。 个人推荐语 同简介。 参考价值所在简介 穿越剧对人类基本无参考价值，这几乎已经成为共识了。 不要慌张，充分锻炼身体、汲取知识、努力奋斗，这几乎是每个穿越剧的要点，也是对个人发展很有帮助的建议 评价 Id 评价标准 成绩 备注 1 小说分类 都市 　 2 地位 59 　 3... -->
-          
-  本书作者:  海桐
+《神话都市之最强主宰》强烈推荐。</div><p><a href="/%E7%A5%9E%E8%AF%9D%E9%83%BD%E5%B8%82%E4%B9%8B%E6%9C%80%E5%BC%BA%E4%B8%BB%E5%AE%B0/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/SHDSZZuiQiangZhuZai.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月26日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-26T20:17:04+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E8%BD%AE%E5%9B%9E1984/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/lunHui1984.html"><h2 itemprop="headline" class="item__header">轮回1984</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  海桐
 本书链接:  百度百科
-本书完本时间: 2016-02...
-        </div>
+本书完本时间: 2016-02-21
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-26/daShengZhiBoJian" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            大圣直播间
-            <time style="font-size: 0.5em;" datetime="2018-05-26 12:17:01 +0000" class="catalogue-time">May 26, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《大圣直播间》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《轮回1984》强烈推荐。</div><p><a href="/%E8%BD%AE%E5%9B%9E1984/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/lunHui1984.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月26日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-26T20:17:02+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E5%A4%A7%E5%9C%A3%E7%9B%B4%E6%92%AD%E9%97%B4/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/daShengZhiBoJian.html"><h2 itemprop="headline" class="item__header">大圣直播间</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-25/zuiQiangDeXiTong" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            最强的系统
-            <time style="font-size: 0.5em;" datetime="2018-05-25 12:17:07 +0000" class="catalogue-time">May 25, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《最强的系统》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《大圣直播间》强烈推荐。</div><p><a href="/%E5%A4%A7%E5%9C%A3%E7%9B%B4%E6%92%AD%E9%97%B4/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/26/daShengZhiBoJian.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月26日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-26T20:17:01+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E6%9C%80%E5%BC%BA%E7%9A%84%E7%B3%BB%E7%BB%9F/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/zuiQiangDeXiTong.html"><h2 itemprop="headline" class="item__header">最强的系统</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-25/zhuTianZuiQiangBoss" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            诸天最强BOSS
-            <time style="font-size: 0.5em;" datetime="2018-05-25 12:17:06 +0000" class="catalogue-time">May 25, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《诸天最强BOSS》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《最强的系统》强烈推荐。</div><p><a href="/%E6%9C%80%E5%BC%BA%E7%9A%84%E7%B3%BB%E7%BB%9F/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/zuiQiangDeXiTong.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月25日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-25T20:17:07+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E8%AF%B8%E5%A4%A9%E6%9C%80%E5%BC%BAboss/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/zhuTianZuiQiangBoss.html"><h2 itemprop="headline" class="item__header">诸天最强BOSS</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-25/zhuTianWanJieFanPaiLiaoTianQun" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            诸天万界反派聊天群
-            <time style="font-size: 0.5em;" datetime="2018-05-25 12:17:05 +0000" class="catalogue-time">May 25, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《诸天万界反派聊天群》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《诸天最强BOSS》强烈推荐。</div><p><a href="/%E8%AF%B8%E5%A4%A9%E6%9C%80%E5%BC%BAboss/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/zhuTianZuiQiangBoss.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月25日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-25T20:17:06+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E8%AF%B8%E5%A4%A9%E4%B8%87%E7%95%8C%E5%8F%8D%E6%B4%BE%E8%81%8A%E5%A4%A9%E7%BE%A4/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/zhuTianWanJieFanPaiLiaoTianQun.html"><h2 itemprop="headline" class="item__header">诸天万界反派聊天群</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-25/woZhenBuShiKaiWanXiao" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            我真不是开玩笑
-            <time style="font-size: 0.5em;" datetime="2018-05-25 12:17:04 +0000" class="catalogue-time">May 25, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《我真不是开玩笑》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《诸天万界反派聊天群》强烈推荐。</div><p><a href="/%E8%AF%B8%E5%A4%A9%E4%B8%87%E7%95%8C%E5%8F%8D%E6%B4%BE%E8%81%8A%E5%A4%A9%E7%BE%A4/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/zhuTianWanJieFanPaiLiaoTianQun.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月25日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-25T20:17:05+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E6%88%91%E7%9C%9F%E4%B8%8D%E6%98%AF%E5%BC%80%E7%8E%A9%E7%AC%91/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/woZhenBuShiKaiWanXiao.html"><h2 itemprop="headline" class="item__header">我真不是开玩笑</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-25/taiJianWuDi" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            太监武帝
-            <time style="font-size: 0.5em;" datetime="2018-05-25 12:17:03 +0000" class="catalogue-time">May 25, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《太监武帝》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《我真不是开玩笑》强烈推荐。</div><p><a href="/%E6%88%91%E7%9C%9F%E4%B8%8D%E6%98%AF%E5%BC%80%E7%8E%A9%E7%AC%91/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/woZhenBuShiKaiWanXiao.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月25日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-25T20:17:04+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E5%A4%AA%E7%9B%91%E6%AD%A6%E5%B8%9D/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/taiJianWuDi.html"><h2 itemprop="headline" class="item__header">太监武帝</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-25/shiShangDiYiZuShiYe" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            史上第一祖师爷
-            <time style="font-size: 0.5em;" datetime="2018-05-25 12:17:02 +0000" class="catalogue-time">May 25, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《史上第一祖师爷》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《太监武帝》强烈推荐。</div><p><a href="/%E5%A4%AA%E7%9B%91%E6%AD%A6%E5%B8%9D/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/taiJianWuDi.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月25日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-25T20:17:03+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E5%8F%B2%E4%B8%8A%E7%AC%AC%E4%B8%80%E7%A5%96%E5%B8%88%E7%88%B7/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/shiShangDiYiZuShiYe.html"><h2 itemprop="headline" class="item__header">史上第一祖师爷</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-25/CSZaiChuanYueZheGuXiang" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            重生在穿越者故乡
-            <time style="font-size: 0.5em;" datetime="2018-05-25 12:17:01 +0000" class="catalogue-time">May 25, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《重生在穿越者故乡》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《史上第一祖师爷》强烈推荐。</div><p><a href="/%E5%8F%B2%E4%B8%8A%E7%AC%AC%E4%B8%80%E7%A5%96%E5%B8%88%E7%88%B7/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/shiShangDiYiZuShiYe.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月25日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-25T20:17:02+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E9%87%8D%E7%94%9F%E5%9C%A8%E7%A9%BF%E8%B6%8A%E8%80%85%E6%95%85%E4%B9%A1/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/CSZaiChuanYueZheGuXiang.html"><h2 itemprop="headline" class="item__header">重生在穿越者故乡</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-24/yangJianRSCHSCD" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            杨戬人生长恨水长东
-            <time style="font-size: 0.5em;" datetime="2018-05-24 12:17:02 +0000" class="catalogue-time">May 24, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《杨戬人生长恨水长东》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《重生在穿越者故乡》强烈推荐。</div><p><a href="/%E9%87%8D%E7%94%9F%E5%9C%A8%E7%A9%BF%E8%B6%8A%E8%80%85%E6%95%85%E4%B9%A1/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/25/CSZaiChuanYueZheGuXiang.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月25日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-25T20:17:01+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E6%9D%A8%E6%88%AC%E4%BA%BA%E7%94%9F%E9%95%BF%E6%81%A8%E6%B0%B4%E9%95%BF%E4%B8%9C/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/24/yangJianRSCHSCD.html"><h2 itemprop="headline" class="item__header">杨戬人生长恨水长东</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-24/wuKongZhuan" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            悟空传
-            <time style="font-size: 0.5em;" datetime="2018-05-24 12:17:01 +0000" class="catalogue-time">May 24, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《悟空传》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《杨戬人生长恨水长东》强烈推荐。</div><p><a href="/%E6%9D%A8%E6%88%AC%E4%BA%BA%E7%94%9F%E9%95%BF%E6%81%A8%E6%B0%B4%E9%95%BF%E4%B8%9C/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/24/yangJianRSCHSCD.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月24日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-24T20:17:02+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E6%82%9F%E7%A9%BA%E4%BC%A0/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/24/wuKongZhuan.html"><h2 itemprop="headline" class="item__header">悟空传</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
-      </div>
-    </a>
-    
-    
-    
-    <a href="/2018-05-23/woCongShengTangLai" class="catalogue-item">
-      <div >
-          <div class="catalogue-title">
-            我从盛唐来
-            <time style="font-size: 0.5em;" datetime="2018-05-23 12:17:05 +0000" class="catalogue-time">May 23, 2018</time>
-          </div>
 
-        <div class="catalogue-line"></div>
-
-        <div>
-          <!-- 本书作者: 天堂不寂寞 本书链接: 起点网链接 本书完本时间: 2011-07-20 《我从盛唐来》强烈推荐。 评价 Id 评价标准 成绩 备注 1 小说分类 玄幻 　 2 地位 80 　 3 字数 524 　万字 4 内容丰富程度 60 　 5 情节发展曲折度... -->
-          
-  本书作者:  天堂不寂寞
+《悟空传》强烈推荐。</div><p><a href="/%E6%82%9F%E7%A9%BA%E4%BC%A0/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/24/wuKongZhuan.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月24日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-24T20:17:01+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E6%88%91%E4%BB%8E%E7%9B%9B%E5%94%90%E6%9D%A5/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/woCongShengTangLai.html"><h2 itemprop="headline" class="item__header">我从盛唐来</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
 本书链接:  起点网链接
-本书完本时间: 201...
-        </div>
+本书完本时间: 2011-07-20
 
+
+《我从盛唐来》强烈推荐。</div><p><a href="/%E6%88%91%E4%BB%8E%E7%9B%9B%E5%94%90%E6%9D%A5/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/woCongShengTangLai.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月23日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-23T20:17:05+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E5%A4%A9%E5%BA%AD%E6%B8%85%E6%B4%81%E5%B7%A5/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/tianTingQingJieGong.html"><h2 itemprop="headline" class="item__header">天庭清洁工</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
+本书链接:  起点网链接
+本书完本时间: 2011-07-20
+
+
+《天庭清洁工》强烈推荐。</div><p><a href="/%E5%A4%A9%E5%BA%AD%E6%B8%85%E6%B4%81%E5%B7%A5/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/tianTingQingJieGong.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月23日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-23T20:17:04+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E5%B0%B1%E9%97%AE%E4%BD%A0%E6%B0%94%E4%B8%8D%E6%B0%94/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/jiuWenNiQiBuQi.html"><h2 itemprop="headline" class="item__header">就问你气不气</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
+本书链接:  起点网链接
+本书完本时间: 2011-07-20
+
+
+《就问你气不气》强烈推荐。</div><p><a href="/%E5%B0%B1%E9%97%AE%E4%BD%A0%E6%B0%94%E4%B8%8D%E6%B0%94/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/jiuWenNiQiBuQi.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月23日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-23T20:17:03+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E9%87%8D%E6%B4%BB%E4%B8%80%E6%AC%A1/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/chongHuoYiCi.html"><h2 itemprop="headline" class="item__header">重活一次</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
+本书链接:  起点网链接
+本书完本时间: 2011-07-20
+
+
+《重活一次》强烈推荐。</div><p><a href="/%E9%87%8D%E6%B4%BB%E4%B8%80%E6%AC%A1/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/chongHuoYiCi.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月23日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-23T20:17:02+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E5%BD%AA%E6%82%8D%E7%9A%84%E4%BA%BA%E7%94%9F/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/biaoHanDeRenSheng.html"><h2 itemprop="headline" class="item__header">彪悍的人生</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
+本书链接:  起点网链接
+本书完本时间: 2011-07-20
+
+
+《彪悍的人生》强烈推荐。</div><p><a href="/%E5%BD%AA%E6%82%8D%E7%9A%84%E4%BA%BA%E7%94%9F/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/23/biaoHanDeRenSheng.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月23日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-23T20:17:01+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article><article class="item"><div class="item__content">
+          <header><a href="/%E8%BE%9B%E4%BA%A5%E5%A4%A7%E8%8B%B1%E9%9B%84/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/22/xinHaiDaYingXiong.html"><h2 itemprop="headline" class="item__header">辛亥大英雄</h2></a></header>
+          <div class="item__description"><div class="article__content" itemprop="description articleBody">本书作者:  天堂不寂寞
+本书链接:  起点网链接
+本书完本时间: 2011-07-20
+
+
+《辛亥大英雄》强烈推荐。</div><p><a href="/%E8%BE%9B%E4%BA%A5%E5%A4%A7%E8%8B%B1%E9%9B%84/%E9%9D%9E%E5%B8%B8%E5%BC%BA%E7%83%88/2018/05/22/xinHaiDaYingXiong.html">阅读更多</a></p></div><div class="article__info clearfix"><ul class="left-col menu"><li>
+              <a class="button button--secondary button--pill button--sm"
+                href="/archive.html?tag=%E9%AB%98%E6%AD%A6">高武</a>
+            </li></ul><ul class="right-col menu"><li><i class="fas fa-user"></i> <span>书评网</span></li><li><i class="far fa-calendar-alt"></i> <span>2018年 05月22日</span>
+            </li></ul></div><meta itemprop="author" content="书评网"/><meta itemprop="datePublished" content="2018-05-22T20:17:10+08:00">
+    <meta itemprop="keywords" content="高武"></div>
+      </article></div>
+</div><div class="layout--home"><div class="pagination"><p>共计 88 篇文章，5 页。</p>
+    <div class="pagination__menu">
+      <ul class="menu menu--nowrap"><li><div class="button button--secondary button--circle disabled">
+            <i class="fas fa-angle-left"></i>
+          </div></li><li>
+              <div class="button button--primary button--circle focus"><span>1</span></div>
+            </li><li>
+                <a class="button button--secondary button--circle" href="/page2"><span>2</span></a>
+              </li><li>
+                <a class="button button--secondary button--circle" href="/page3"><span>3</span></a>
+              </li><li>
+                <a class="button button--secondary button--circle" href="/page4"><span>4</span></a>
+              </li><li>
+                <a class="button button--secondary button--circle" href="/page5"><span>5</span></a>
+              </li><li><a class="button button--secondary button--circle" href="/page2">
+            <i class="fas fa-angle-right"></i>
+          </a></li></ul>
+    </div>
+  </div></div>
+<script>/*(function () {
+
+})();*/
+</script>
+
+
+</div><section class="page__comments d-print-none"></section></article><!-- start custom main bottom snippet -->
+
+<!-- end custom main bottom snippet --></div>
+            </div></div></div><div class="page__footer d-print-none">
+<footer class="footer py-4 js-page-footer">
+  <div class="main"><div itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="书评网"><meta itemprop="url" content="https://www.lidaxiang.tk"><meta itemprop="description" content="为你推荐好看的小说。"><div class="footer__author-links"><div class="author-links">
+  <ul class="menu menu--nowrap menu--inline"><link itemprop="url" href="https://www.lidaxiang.tk"><li title="给我发邮件。">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:commentbook@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a><li title="在 Github 上关注我。">
+        <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/commentbook" target="_blank">
+          <div class="icon"><svg fill="#000000" width="24px" height="24px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path class="svgpath" data-index="path_0" fill="#272636" d="M0 525.2c0 223.6 143.3 413.7 343 483.5 26.9 6.8 22.8-12.4 22.8-25.4l0-88.7c-155.3 18.2-161.5-84.6-172-101.7-21.1-36-70.8-45.2-56-62.3 35.4-18.2 71.4 4.6 113.1 66.3 30.2 44.7 89.1 37.2 119 29.7 6.5-26.9 20.5-50.9 39.7-69.6C248.8 728.2 181.7 630 181.7 513.2c0-56.6 18.7-108.7 55.3-150.7-23.3-69.3 2.2-128.5 5.6-137.3 66.5-6 135.5 47.6 140.9 51.8 37.8-10.2 80.9-15.6 129.1-15.6 48.5 0 91.8 5.6 129.8 15.9 12.9-9.8 77-55.8 138.8-50.2 3.3 8.8 28.2 66.7 6.3 135 37.1 42.1 56 94.6 56 151.4 0 117-67.5 215.3-228.8 243.7 26.9 26.6 43.6 63.4 43.6 104.2l0 128.8c0.9 10.3 0 20.5 17.2 20.5C878.1 942.4 1024 750.9 1024 525.3c0-282.9-229.3-512-512-512C229.1 13.2 0 242.3 0 525.2L0 525.2z" />
+</svg>
+</div>
+        </a>
+      </li></ul>
+</div>
+</div>
+    </div><div class="site-info mt-2">
+      <div>© 书评网 2019,
+        Powered by <a title="Jekyll is a simple, blog-aware, static site generator." href="http://jekyllrb.com/">Jekyll</a> & <a
+        title="TeXt is a super customizable Jekyll theme." href="https://github.com/kitian616/jekyll-TeXt-theme">TeXt Theme</a>.
       </div>
-    </a>
-    
-    
-
+    </div>
   </div>
+</footer></div></div>
+    </div><script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    var $body = $('body'), $window = $(window);
+    var $pageRoot = $('.js-page-root'), $pageMain = $('.js-page-main');
+    var activeCount = 0;
+    function modal(options) {
+      var $root = this, visible, onChange, hideWhenWindowScroll = false;
+      var scrollTop;
+      function setOptions(options) {
+        var _options = options || {};
+        visible = _options.initialVisible === undefined ? false : show;
+        onChange = _options.onChange;
+        hideWhenWindowScroll = _options.hideWhenWindowScroll;
+      }
+      function init() {
+        setState(visible);
+      }
+      function setState(isShow) {
+        if (isShow === visible) {
+          return;
+        }
+        visible = isShow;
+        if (visible) {
+          activeCount++;
+          scrollTop = $(window).scrollTop() || $pageMain.scrollTop();
+          $root.addClass('modal--show');
+          $pageMain.scrollTop(scrollTop);
+          activeCount === 1 && ($pageRoot.addClass('show-modal'), $body.addClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.on('scroll', hide);
+          $window.on('keyup', handleKeyup);
+        } else {
+          activeCount > 0 && activeCount--;
+          $root.removeClass('modal--show');
+          $window.scrollTop(scrollTop);
+          activeCount === 0 && ($pageRoot.removeClass('show-modal'), $body.removeClass('of-hidden'));
+          hideWhenWindowScroll && window.hasEvent('touchstart') && $window.off('scroll', hide);
+          $window.off('keyup', handleKeyup);
+        }
+        onChange && onChange(visible);
+      }
+      function show() {
+        setState(true);
+      }
+      function hide() {
+        setState(false);
+      }
+      function handleKeyup(e) {
+        // Char Code: 27  ESC
+        if (e.which ===  27) {
+          hide();
+        }
+      }
+      setOptions(options);
+      init();
+      return {
+        show: show,
+        hide: hide,
+        $el: $root
+      };
+    }
+    $.fn.modal = modal;
+  });
+})();
+</script><div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal"><script>
+(function () {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    // search panel
+    var search = (window.search || (window.search = {}));
+    var useDefaultSearchBox = window.useDefaultSearchBox === undefined ?
+      true : window.useDefaultSearchBox ;
 
-  <div class="pagination">
-  
-  
-    <a href="/page2" class="right arrow">&#8594;</a>
-  
+    var $searchModal = $('.js-page-search-modal');
+    var $searchToggle = $('.js-search-toggle');
+    var searchModal = $searchModal.modal({ onChange: handleModalChange, hideWhenWindowScroll: true });
+    var modalVisible = false;
+    search.searchModal = searchModal;
 
-  <span>1</span>
+    var $searchBox = null;
+    var $searchInput = null;
+    var $searchClear = null;
+
+    function getModalVisible() {
+      return modalVisible;
+    }
+    search.getModalVisible = getModalVisible;
+
+    function handleModalChange(visible) {
+      modalVisible = visible;
+      if (visible) {
+        search.onShow && search.onShow();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].focus();
+      } else {
+        search.onShow && search.onHide();
+        useDefaultSearchBox && $searchInput[0] && $searchInput[0].blur();
+        setTimeout(function() {
+          useDefaultSearchBox && ($searchInput.val(''), $searchBox.removeClass('not-empty'));
+          search.clear && search.clear();
+          window.pageAsideAffix && window.pageAsideAffix.refresh();
+        }, 400);
+      }
+    }
+
+    $searchToggle.on('click', function() {
+      modalVisible ? searchModal.hide() : searchModal.show();
+    });
+    // Char Code: 83  S, 191 /
+    $(window).on('keyup', function(e) {
+      if (!modalVisible && !window.isFormElement(e.target || e.srcElement) && (e.which === 83 || e.which === 191)) {
+        modalVisible || searchModal.show();
+      }
+    });
+
+    if (useDefaultSearchBox) {
+      $searchBox = $('.js-search-box');
+      $searchInput = $searchBox.children('input');
+      $searchClear = $searchBox.children('.js-icon-clear');
+      search.getSearchInput = function() {
+        return $searchInput.get(0);
+      };
+      search.getVal = function() {
+        return $searchInput.val();
+      };
+      search.setVal = function(val) {
+        $searchInput.val(val);
+      };
+
+      $searchInput.on('focus', function() {
+        $(this).addClass('focus');
+      });
+      $searchInput.on('blur', function() {
+        $(this).removeClass('focus');
+      });
+      $searchInput.on('input', window.throttle(function() {
+        var val = $(this).val();
+        if (val === '' || typeof val !== 'string') {
+          search.clear && search.clear();
+        } else {
+          $searchBox.addClass('not-empty');
+          search.onInputNotEmpty && search.onInputNotEmpty(val);
+        }
+      }, 400));
+      $searchClear.on('click', function() {
+        $searchInput.val(''); $searchBox.removeClass('not-empty');
+        search.clear && search.clear();
+      });
+    }
+  });
+})();
+</script><div class="search search--dark">
+  <div class="main">
+    <div class="search__header">搜索</div>
+    <div class="search-bar">
+      <div class="search-box js-search-box">
+        <div class="search-box__icon-search"><i class="fas fa-search"></i></div>
+        <input type="text" />
+        <div class="search-box__icon-clear js-icon-clear">
+          <a><i class="fas fa-times"></i></a>
+        </div>
+      </div>
+      <button class="button button--theme-dark button--pill search__cancel js-search-toggle">
+        取消</button>
+    </div>
+    <div class="search-result js-search-result"></div>
+  </div>
 </div>
+<script>var SOURCES = window.TEXT_VARIABLES.sources;
+var PAHTS = window.TEXT_VARIABLES.paths;
+window.Lazyload.js([SOURCES.jquery, PAHTS.search_js], function() {
+  var search = (window.search || (window.search = {}));
+  var searchData = window.TEXT_SEARCH_DATA ? initData(window.TEXT_SEARCH_DATA) : {};
+
+  function memorize(f) {
+    var cache = {};
+    return function () {
+      var key = Array.prototype.join.call(arguments, ',');
+      if (key in cache) return cache[key];
+      else return cache[key] = f.apply(this, arguments);
+    };
+  }
+
+  function initData(data) {
+    var _data = [], i, j, key, keys, cur;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i], _data[key] = [];
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        cur.title = window.decodeUrl(cur.title);
+        cur.url = window.decodeUrl(cur.url);
+        _data[key].push(cur);
+      }
+    }
+    return _data;
+  }
+
+  /// search
+  function searchByQuery(query) {
+    var i, j, key, keys, cur, _title, result = {};
+    keys = Object.keys(searchData);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      for (j = 0; j < searchData[key].length; j++) {
+        cur = searchData[key][j], _title = cur.title;
+        if ((result[key] === undefined || result[key] && result[key].length < 4 )
+          && _title.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+          if (result[key] === undefined) {
+            result[key] = [];
+          }
+          result[key].push(cur);
+        }
+      }
+    }
+    return result;
+  }
+
+  var renderHeader = memorize(function(header) {
+    return $('<p class="search-result__header">' + header + '</p>');
+  });
+
+  var renderItem = function(index, title, url) {
+    return $('<li class="search-result__item" data-index="' + index + '"><a class="button" href="' + url + '">' + title + '</a></li>');
+  };
+
+  function render(data) {
+    if (!data) { return null; }
+    var $root = $('<ul></ul>'), i, j, key, keys, cur, itemIndex = 0;
+    keys = Object.keys(data);
+    for (i = 0; i < keys.length; i++) {
+      key = keys[i];
+      $root.append(renderHeader(key));
+      for (j = 0; j < data[key].length; j++) {
+        cur = data[key][j];
+        $root.append(renderItem(itemIndex++, cur.title, cur.url));
+      }
+    }
+    return $root;
+  }
+
+  // search box
+  var $result = $('.js-search-result'), $resultItems;
+  var lastActiveIndex, activeIndex;
+
+  function clear() {
+    $result.html(null);
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+  }
+  function onInputNotEmpty(val) {
+    $result.html(render(searchByQuery(val)));
+    $resultItems = $('.search-result__item'); activeIndex = 0;
+    $resultItems.eq(0).addClass('active');
+  }
+
+  search.clear = clear;
+  search.onInputNotEmpty = onInputNotEmpty;
+
+  function updateResultItems() {
+    lastActiveIndex >= 0 && $resultItems.eq(lastActiveIndex).removeClass('active');
+    activeIndex >= 0 && $resultItems.eq(activeIndex).addClass('active');
+  }
+
+  function moveActiveIndex(direction) {
+    var itemsCount = $resultItems ? $resultItems.length : 0;
+    if (itemsCount > 1) {
+      lastActiveIndex = activeIndex;
+      if (direction === 'up') {
+        activeIndex = (activeIndex - 1 + itemsCount) % itemsCount;
+      } else if (direction === 'down') {
+        activeIndex = (activeIndex + 1 + itemsCount) % itemsCount;
+      }
+      updateResultItems();
+    }
+  }
+
+  // Char Code: 13  Enter, 37  ⬅, 38  ⬆, 39  ➡, 40  ⬇
+  $(window).on('keyup', function(e) {
+    var modalVisible = search.getModalVisible && search.getModalVisible();
+    if (modalVisible) {
+      if (e.which === 38) {
+        modalVisible && moveActiveIndex('up');
+      } else if (e.which === 40) {
+        modalVisible && moveActiveIndex('down');
+      } else if (e.which === 13) {
+        modalVisible && $resultItems && activeIndex >= 0 && $resultItems.eq(activeIndex).children('a')[0].click();
+      }
+    }
+  });
+
+  $result.on('mouseover', '.search-result__item > a', function() {
+    var itemIndex = $(this).parent().data('index');
+    itemIndex >= 0 && (lastActiveIndex = activeIndex, activeIndex = itemIndex, updateResultItems());
+  });
+});
+</script></div></div>
 
 
-</div>
+<script>(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function scrollToAnchor(anchor, duration, callback) {
+      var $root = this;
+      $root.animate({ scrollTop: $(anchor).position().top }, duration, function() {
+        window.history.replaceState(null, '', window.location.href.split('#')[0] + anchor);
+        callback && callback();
+      });
+    }
+    $.fn.scrollToAnchor = scrollToAnchor;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function affix(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroll,
+        offsetBottom = 0, scrollTarget = window, scroll = window.document, disabled = false, isOverallScroller = true,
+        rootTop, rootLeft, rootHeight, scrollBottom, rootBottomTop,
+        hasInit = false, curState;
 
-  </main>
+      function setOptions(options) {
+        var _options = options || {};
+        _options.offsetBottom && (offsetBottom = _options.offsetBottom);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroll && (scroll = _options.scroll);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $scrollTarget = $(scrollTarget);
+        isOverallScroller = window.isOverallScroller($scrollTarget[0]);
+        $scroll = $(scroll);
+      }
+      function preCalc() {
+        top();
+        rootHeight = $root.outerHeight();
+        rootTop = $root.offset().top + (isOverallScroller ? 0 :  $scrollTarget.scrollTop());
+        rootLeft = $root.offset().left;
+      }
+      function calc(needPreCalc) {
+        needPreCalc && preCalc();
+        scrollBottom = $scroll.outerHeight() - offsetBottom - rootHeight;
+        rootBottomTop = scrollBottom - rootTop;
+      }
+      function top() {
+        if (curState !== 'top') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: 0
+          });
+          curState = 'top';
+        }
+      }
+      function fixed() {
+        if (curState !== 'fixed') {
+          $root.addClass('fixed').css({
+            left: rootLeft + 'px',
+            top: 0
+          });
+          curState = 'fixed';
+        }
+      }
+      function bottom() {
+        if (curState !== 'bottom') {
+          $root.removeClass('fixed').css({
+            left: 0,
+            top: rootBottomTop + 'px'
+          });
+          curState = 'bottom';
+        }
+      }
+      function setState() {
+        var scrollTop = $scrollTarget.scrollTop();
+        if (scrollTop >= rootTop && scrollTop <= scrollBottom) {
+          fixed();
+        } else if (scrollTop < rootTop) {
+          top();
+        } else {
+          bottom();
+        }
+      }
+      function init() {
+        if(!hasInit) {
+          var interval, timeout;
+          calc(true); setState();
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState();
+          });
+          $window.on('resize', function() {
+            disabled || (calc(true), setState());
+          });
+          hasInit = true;
+        }
+      }
 
-  <footer>
-  <span>
-<<<<<<< HEAD
-  &copy; 2018-<time datetime="2019-02-12 15:28:18 +0000">2019</time> 书评, All Rights Reserved. Use the <a href="https://github.com/chesterhow/tale/">Jekyll Tale</a> theme.
-=======
-  &copy; 2018-<time datetime="2018-08-24 06:07:06 +0000">2018</time> 书评, All Rights Reserved. Use the <a href="https://github.com/chesterhow/tale/">Jekyll Tale</a> theme.
->>>>>>> 555c672a352141dfe429a5a3d44b7d15b1292ad5
-</span>
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions,
+        refresh: function() {
+          calc(true, { animation: false }); setState();
+        }
+      };
+    }
+    $.fn.affix = affix;
+  });
+})();
+(function() {
+  var SOURCES = window.TEXT_VARIABLES.sources;
+  window.Lazyload.js(SOURCES.jquery, function() {
+    function toc(options) {
+      var $root = this, $window = $(window), $scrollTarget, $scroller, $tocUl = $('<ul class="toc toc--ellipsis"></ul>'), $tocLi, $headings, $activeLast, $activeCur,
+        selectors = 'h1,h2,h3', container = 'body', scrollTarget = window, scroller = 'html, body', disabled = false,
+        headingsPos, scrolling = false, hasRendered = false, hasInit = false;
 
-  <a href="https://info.flagcounter.com/xGEv"><img src="https://s04.flagcounter.com/count2/xGEv/bg_FFFFFF/txt_000000/border_CCCCCC/columns_8/maxflags_5/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
-</footer>
+      function setOptions(options) {
+        var _options = options || {};
+        _options.selectors && (selectors = _options.selectors);
+        _options.container && (container = _options.container);
+        _options.scrollTarget && (scrollTarget = _options.scrollTarget);
+        _options.scroller && (scroller = _options.scroller);
+        _options.disabled !== undefined && (disabled = _options.disabled);
+        $headings = $(container).find(selectors).filter('[id]');
+        $scrollTarget = $(scrollTarget);
+        $scroller = $(scroller);
+      }
+      function calc() {
+        headingsPos = [];
+        $headings.each(function() {
+          headingsPos.push(Math.floor($(this).position().top));
+        });
+      }
+      function setState(element, disabled) {
+        var scrollTop = $scrollTarget.scrollTop(), i;
+        if (disabled || !headingsPos || headingsPos.length < 1) { return; }
+        if (element) {
+          $activeCur = element;
+        } else {
+          for (i = 0; i < headingsPos.length; i++) {
+            if (scrollTop >= headingsPos[i]) {
+              $activeCur = $tocLi.eq(i);
+            } else {
+              $activeCur || ($activeCur = $tocLi.eq(i));
+              break;
+            }
+          }
+        }
+        $activeLast && $activeLast.removeClass('active');
+        ($activeLast = $activeCur).addClass('active');
+      }
+      function render() {
+        if(!hasRendered) {
+          $root.append($tocUl);
+          $headings.each(function() {
+            var $this = $(this);
+            $tocUl.append($('<li></li>').addClass('toc-' + $this.prop('tagName').toLowerCase())
+              .append($('<a></a>').text($this.text()).attr('href', '#' + $this.prop('id'))));
+          });
+          $tocLi = $tocUl.children('li');
+          $tocUl.on('click', 'a', function(e) {
+            e.preventDefault();
+            var $this = $(this);
+            scrolling = true;
+            setState($this.parent());
+            $scroller.scrollToAnchor($this.attr('href'), 400, function() {
+              scrolling = false;
+            });
+          });
+        }
+        hasRendered = true;
+      }
+      function init() {
+        var interval, timeout;
+        if(!hasInit) {
+          render(); calc(); setState(null, scrolling);
+          // run calc every 100 millisecond
+          interval = setInterval(function() {
+            calc();
+          }, 100);
+          timeout = setTimeout(function() {
+            clearInterval(interval);
+          }, 45000);
+          window.pageLoad.then(function() {
+            setTimeout(function() {
+              clearInterval(interval);
+              clearTimeout(timeout);
+            }, 3000);
+          });
+          $scrollTarget.on('scroll', function() {
+            disabled || setState(null, scrolling);
+          });
+          $window.on('resize', window.throttle(function() {
+            if (!disabled) {
+              render(); calc(); setState(null, scrolling);
+            }
+          }, 100));
+        }
+        hasInit = true;
+      }
 
+      setOptions(options);
+      if (!disabled) {
+        init();
+      }
+      $window.on('resize', window.throttle(function() {
+        init();
+      }, 200));
+      return {
+        setOptions: setOptions
+      };
+    }
+    $.fn.toc = toc;
+  });
+})();
+/*(function () {
 
-</body>
-
+})();*/
+</script><script>
+  window.Lazyload.js(['https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js', 'https://cdn.bootcss.com/Chart.js/2.7.2/Chart.bundle.min.js'], function() {
+    var $canvas = null, $this = null, _ctx = null, _text = '';
+    $('.language-chart').each(function(){
+      $this = $(this);
+      $canvas = $('<canvas></canvas>');
+      _text = $this.text();
+      $this.text('').append($canvas);
+      _ctx = $canvas.get(0).getContext('2d');
+      (_ctx && _text) && (new Chart(_ctx, JSON.parse(_text)) && $this.attr('data-processed', true));
+    });
+  });
+</script><script type="text/x-mathjax-config">
+	var _config = { tex2jax: {
+		inlineMath: [['$','$'], ['\\(','\\)']]
+	}};_config.TeX = { equationNumbers: { autoNumber: "all" } };MathJax.Hub.Config(_config);
+</script>
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script>
+  window.Lazyload.js('https://cdn.bootcss.com/mermaid/8.0.0-rc.8/mermaid.min.js', function() {
+    mermaid.initialize({
+      startOnLoad: true
+    });
+    mermaid.init(undefined, '.language-mermaid');
+  });
+</script>
+    </div>
+    <script>(function () {
+  var $root = document.getElementsByClassName('root')[0];
+  if (window.hasEvent('touchstart')) {
+    $root.dataset.isTouch = true;
+    document.addEventListener('touchstart', function(){}, false);
+  }
+})();
+</script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "杨戬人生长恨水长东"
 date:   2018-05-24 12:17:02
 categories:

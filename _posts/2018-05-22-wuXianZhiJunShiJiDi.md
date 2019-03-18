@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "无限之军事基地"
 date:   2018-05-22 12:17:09
 categories:

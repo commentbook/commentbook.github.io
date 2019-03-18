@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "天魔神潭"
 date:   2018-05-06 12:17:57
 categories:

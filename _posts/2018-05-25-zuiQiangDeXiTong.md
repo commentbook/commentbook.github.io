@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "最强的系统"
 date:   2018-05-25 12:17:07
 categories:

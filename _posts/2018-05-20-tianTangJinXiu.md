@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "天唐锦绣"
 date:   2018-05-20 12:17:06
 categories:

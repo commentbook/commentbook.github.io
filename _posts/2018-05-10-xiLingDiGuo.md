@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "希灵帝国"
 date:   2018-05-10 21:17:57
 categories:

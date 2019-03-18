@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "德意志的最高荣耀"
 date:   2018-05-22 12:17:03
 categories:

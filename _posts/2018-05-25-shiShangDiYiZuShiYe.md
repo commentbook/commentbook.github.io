@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "史上第一祖师爷"
 date:   2018-05-25 12:17:02
 categories:

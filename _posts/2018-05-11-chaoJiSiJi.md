@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "超级司机"
 date:   2018-05-11 21:17:57
 categories:

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title:  "评论任务"
 date:   2018-03-20 17:23:57 +0800
 isTop: true

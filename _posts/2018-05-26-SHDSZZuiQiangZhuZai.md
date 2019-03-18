@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: article
+type: grid
 title:  "神话都市之最强主宰"
 date:   2018-05-26 12:17:04
 categories:
@@ -7,7 +8,7 @@ categories:
 - 非常强烈
 tag:
 - 高武
-
+# cover: /assets/images/cover2.jpg
 author: 荒岛书生
 ---
 
