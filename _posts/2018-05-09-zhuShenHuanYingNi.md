@@ -2,9 +2,6 @@
 layout: article
 title:  "主神欢迎你"
 date:   2018-05-09 21:17:57
-categories:
-- 主神欢迎你
-- 非常强烈
 tag:
 - 高武
 

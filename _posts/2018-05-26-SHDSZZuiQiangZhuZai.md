@@ -3,9 +3,9 @@ layout: article
 type: grid
 title:  "神话都市之最强主宰"
 date:   2018-05-26 12:17:04
-categories:
-- 神话都市之最强主宰
-- 非常强烈
+pageview: true
+comment: true
+key: SHDSZ_dushi_zhi_zuiqiang_zhuzai_20180526
 tag:
 - 高武
 # cover: /assets/images/cover2.jpg

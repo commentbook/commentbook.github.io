@@ -2,9 +2,6 @@
 layout: article
 title:  "大秦帝师"
 date:   2018-05-14 12:17:57
-categories:
-- 大秦帝师
-- 非常强烈
 tag:
 - 高武
 

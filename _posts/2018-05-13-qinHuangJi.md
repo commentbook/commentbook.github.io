@@ -2,9 +2,6 @@
 layout: article
 title:  "秦皇纪"
 date:   2018-05-13 21:17:57
-categories:
-- 秦皇纪
-- 非常强烈
 tag:
 - 高武
 

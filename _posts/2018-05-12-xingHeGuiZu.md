@@ -2,9 +2,6 @@
 layout: article
 title:  "星河贵族"
 date:   2018-05-12 12:17:57
-categories:
-- 星河贵族
-- 非常强烈
 tag:
 - 高武
 

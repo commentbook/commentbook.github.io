@@ -2,9 +2,6 @@
 layout: article
 title:  "大圣直播间"
 date:   2018-05-26 12:17:01
-categories:
-- 大圣直播间
-- 非常强烈
 tag:
 - 高武
 

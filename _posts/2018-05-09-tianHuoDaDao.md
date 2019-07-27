@@ -2,9 +2,6 @@
 layout: article
 title:  "天火大道"
 date:   2018-05-09 12:17:57
-categories:
-- 天火大道
-- 非常强烈
 tag:
 - 高武
 

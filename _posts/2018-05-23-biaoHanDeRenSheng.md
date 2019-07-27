@@ -2,9 +2,6 @@
 layout: article
 title:  "彪悍的人生"
 date:   2018-05-23 12:17:01
-categories:
-- 彪悍的人生
-- 非常强烈
 tag:
 - 高武
 

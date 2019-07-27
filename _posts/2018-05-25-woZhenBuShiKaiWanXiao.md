@@ -2,9 +2,6 @@
 layout: article
 title:  "我真不是开玩笑"
 date:   2018-05-25 12:17:04
-categories:
-- 我真不是开玩笑
-- 非常强烈
 tag:
 - 高武
 

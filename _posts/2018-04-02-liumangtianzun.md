@@ -2,9 +2,6 @@
 layout: article
 title:  "流氓天尊"
 date:   2018-04-02 22:17:57
-categories:
-- 流氓天尊
-- 强烈
 tag: 武侠
 author: 荒岛书生
 ---

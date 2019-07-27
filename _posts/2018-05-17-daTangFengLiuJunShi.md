@@ -2,9 +2,6 @@
 layout: article
 title:  "大唐风流军师"
 date:   2018-05-17 12:17:57
-categories:
-- 大唐风流军师
-- 非常强烈
 tag:
 - 高武
 

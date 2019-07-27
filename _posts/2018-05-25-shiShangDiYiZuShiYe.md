@@ -2,9 +2,6 @@
 layout: article
 title:  "史上第一祖师爷"
 date:   2018-05-25 12:17:02
-categories:
-- 史上第一祖师爷
-- 非常强烈
 tag:
 - 高武
 

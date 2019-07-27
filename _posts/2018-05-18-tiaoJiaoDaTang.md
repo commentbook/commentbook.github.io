@@ -2,9 +2,6 @@
 layout: article
 title:  "调教大唐"
 date:   2018-05-18 12:17:57
-categories:
-- 调教大唐
-- 非常强烈
 tag:
 - 高武
 

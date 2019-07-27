@@ -2,9 +2,6 @@
 layout: article
 title:  "城管无敌"
 date:   2018-05-08 12:17:57
-categories:
-- 城管无敌
-- 非常强烈
 tag:
 - 高武
 

@@ -2,9 +2,6 @@
 layout: article
 title:  "我从盛唐来"
 date:   2018-05-23 12:17:05
-categories:
-- 我从盛唐来
-- 非常强烈
 tag:
 - 高武
 

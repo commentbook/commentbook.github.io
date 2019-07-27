@@ -2,9 +2,6 @@
 layout: article
 title:  "末世之批发救世主"
 date:   2018-05-08 21:17:57
-categories:
-- 末世之批发救世主
-- 非常强烈
 tag:
 - 高武
 

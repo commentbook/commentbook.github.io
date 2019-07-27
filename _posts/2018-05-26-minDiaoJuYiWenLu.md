@@ -2,9 +2,6 @@
 layout: article
 title:  "民调局异闻录"
 date:   2018-05-26 12:17:08
-categories:
-- 民调局异闻录
-- 非常强烈
 tag:
 - 高武
 # cover: /assets/images/cover2.jpg

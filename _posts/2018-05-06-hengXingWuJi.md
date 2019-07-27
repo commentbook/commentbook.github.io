@@ -2,9 +2,6 @@
 layout: article
 title:  "横星无忌"
 date:   2018-05-06 12:17:57
-categories:
-- 横星无忌
-- 非常强烈
 tag:
 - 高武
 

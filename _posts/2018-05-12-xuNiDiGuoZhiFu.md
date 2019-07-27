@@ -2,9 +2,6 @@
 layout: article
 title:  "虚拟帝国之父"
 date:   2018-05-12 21:17:57
-categories:
-- 虚拟帝国之父
-- 非常强烈
 tag:
 - 高武
 

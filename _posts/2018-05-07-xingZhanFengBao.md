@@ -2,9 +2,6 @@
 layout: article
 title:  "星战风暴"
 date:   2018-05-07 21:17:57
-categories:
-- 星战风暴
-- 非常强烈
 tag:
 - 高武
 

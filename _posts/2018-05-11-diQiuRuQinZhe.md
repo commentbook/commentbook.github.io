@@ -2,9 +2,6 @@
 layout: article
 title:  "地球入侵者"
 date:   2018-05-11 21:17:57
-categories:
-- 地球入侵者
-- 非常强烈
 tag:
 - 高武
 

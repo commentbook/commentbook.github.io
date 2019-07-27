@@ -2,9 +2,6 @@
 layout: article
 title:  "我的岳父大人叫吕布"
 date:   2018-05-16 21:17:57
-categories:
-- 我的岳父大人叫吕布
-- 非常强烈
 tag:
 - 高武
 

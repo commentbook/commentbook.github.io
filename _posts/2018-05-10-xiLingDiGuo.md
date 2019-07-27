@@ -2,9 +2,6 @@
 layout: article
 title:  "希灵帝国"
 date:   2018-05-10 21:17:57
-categories:
-- 希灵帝国
-- 非常强烈
 tag:
 - 高武
 

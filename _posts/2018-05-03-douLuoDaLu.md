@@ -2,9 +2,6 @@
 layout: article
 title:  "斗罗大陆"
 date:   2018-05-03 12:17:57
-categories:
-- 斗罗大陆
-- 非常强烈
 tag:
 - 高武
 

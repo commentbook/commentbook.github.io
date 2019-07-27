@@ -2,9 +2,6 @@
 layout: article
 title:  "重生之最强暴君"
 date:   2018-05-05 12:17:57
-categories:
-- 重生之最强暴君
-- 非常强烈
 tag:
 - 高武
 

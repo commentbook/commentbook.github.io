@@ -2,9 +2,6 @@
 layout: article
 title:  "辛亥大英雄"
 date:   2018-05-22 12:17:10
-categories:
-- 辛亥大英雄
-- 非常强烈
 tag:
 - 高武
 

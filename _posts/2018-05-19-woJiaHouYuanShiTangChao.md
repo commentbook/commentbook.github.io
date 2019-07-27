@@ -2,9 +2,6 @@
 layout: article
 title:  "我家后院是唐朝"
 date:   2018-05-19 21:17:57
-categories:
-- 我家后院是唐朝
-- 非常强烈
 tag:
 - 高武
 

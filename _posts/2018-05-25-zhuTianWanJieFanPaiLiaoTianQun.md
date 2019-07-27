@@ -2,9 +2,6 @@
 layout: article
 title:  "诸天万界反派聊天群"
 date:   2018-05-25 12:17:05
-categories:
-- 诸天万界反派聊天群
-- 非常强烈
 tag:
 - 高武
 

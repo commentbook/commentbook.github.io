@@ -2,9 +2,6 @@
 layout: article
 title:  "周氏三国"
 date:   2018-05-15 21:17:57
-categories:
-- 周氏三国
-- 非常强烈
 tag:
 - 高武
 

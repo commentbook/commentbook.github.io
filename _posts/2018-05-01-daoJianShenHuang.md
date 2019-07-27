@@ -2,10 +2,8 @@
 layout: article
 title:  "刀剑神皇"
 date:   2018-05-01 12:17:57
-categories:
-- 刀剑神皇
-- 非常强烈
 tag:
+- 刀剑神皇
 - 高武
 
 author: 荒岛书生

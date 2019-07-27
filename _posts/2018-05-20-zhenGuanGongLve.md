@@ -2,9 +2,6 @@
 layout: article
 title:  "贞观攻略"
 date:   2018-05-20 12:17:07
-categories:
-- 贞观攻略
-- 非常强烈
 tag:
 - 高武
 

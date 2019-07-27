@@ -2,9 +2,6 @@
 layout: article
 title:  "我的老婆是军阀"
 date:   2018-05-22 12:17:08
-categories:
-- 我的老婆是军阀
-- 非常强烈
 tag:
 - 高武
 

@@ -2,9 +2,6 @@
 layout: article
 title:  "天珠变"
 date:   2018-05-03 12:17:57
-categories:
-- 天珠变
-- 非常强烈
 tag:
 - 高武
 

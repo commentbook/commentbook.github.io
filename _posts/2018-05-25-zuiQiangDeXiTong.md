@@ -2,9 +2,6 @@
 layout: article
 title:  "最强的系统"
 date:   2018-05-25 12:17:07
-categories:
-- 最强的系统
-- 非常强烈
 tag:
 - 高武
 

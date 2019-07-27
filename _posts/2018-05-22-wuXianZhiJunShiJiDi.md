@@ -2,9 +2,6 @@
 layout: article
 title:  "无限之军事基地"
 date:   2018-05-22 12:17:09
-categories:
-- 无限之军事基地
-- 非常强烈
 tag:
 - 高武
 

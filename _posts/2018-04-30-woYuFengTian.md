@@ -2,10 +2,8 @@
 layout: article
 title:  "我欲封天"
 date:   2018-04-27 21:17:57
-categories:
-- 我欲封天
-- 非常强烈
 tag:
+- 我欲封天
 - 高武
 
 author: 荒岛书生

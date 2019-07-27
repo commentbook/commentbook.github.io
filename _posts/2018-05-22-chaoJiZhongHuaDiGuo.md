@@ -2,9 +2,6 @@
 layout: article
 title:  "超级中华帝国"
 date:   2018-05-22 12:17:01
-categories:
-- 超级中华帝国
-- 非常强烈
 tag:
 - 高武
 

@@ -2,9 +2,6 @@
 layout: article
 title:  "天魔神潭"
 date:   2018-05-06 12:17:57
-categories:
-- 天魔神潭
-- 非常强烈
 tag:
 - 高武
 

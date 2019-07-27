@@ -2,9 +2,6 @@
 layout: article
 title:  "带着仓库到大明"
 date:   2018-05-21 12:17:01
-categories:
-- 带着仓库到大明
-- 非常强烈
 tag:
 - 高武
 

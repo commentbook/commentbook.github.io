@@ -2,9 +2,6 @@
 layout: article
 title:  "天庭清洁工"
 date:   2018-05-23 12:17:04
-categories:
-- 天庭清洁工
-- 非常强烈
 tag:
 - 高武
 

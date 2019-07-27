@@ -2,9 +2,6 @@
 layout: article
 title:  "太监武帝"
 date:   2018-05-25 12:17:03
-categories:
-- 太监武帝
-- 非常强烈
 tag:
 - 高武
 

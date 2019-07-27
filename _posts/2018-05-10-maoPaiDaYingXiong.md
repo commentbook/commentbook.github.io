@@ -2,9 +2,6 @@
 layout: article
 title:  "冒牌大英雄"
 date:   2018-05-10 12:17:57
-categories:
-- 冒牌大英雄
-- 非常强烈
 tag:
 - 高武
 

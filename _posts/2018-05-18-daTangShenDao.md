@@ -2,9 +2,6 @@
 layout: article
 title:  "大唐神道"
 date:   2018-05-18 12:17:57
-categories:
-- 大唐神道
-- 非常强烈
 tag:
 - 高武
 

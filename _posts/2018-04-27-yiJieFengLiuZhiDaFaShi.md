@@ -2,9 +2,6 @@
 layout: article
 title:  "异界之风流大法师"
 date:   2018-04-27 21:17:57
-categories:
-- 紫川
-- 非常强烈
 tag:
 - 高武
 

@@ -2,9 +2,6 @@
 layout: article
 title:  "大唐城管大队"
 date:   2018-05-20 12:17:02
-categories:
-- 大唐城管大队
-- 非常强烈
 tag:
 - 高武
 

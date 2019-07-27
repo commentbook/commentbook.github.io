@@ -2,9 +2,6 @@
 layout: article
 title:  "三国之席卷天下"
 date:   2018-05-16 12:17:57
-categories:
-- 三国之席卷天下
-- 非常强烈
 tag:
 - 高武
 

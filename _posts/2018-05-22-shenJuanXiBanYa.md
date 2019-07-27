@@ -2,9 +2,6 @@
 layout: article
 title:  "神眷西班牙"
 date:   2018-05-22 12:17:06
-categories:
-- 神眷西班牙
-- 非常强烈
 tag:
 - 高武
 

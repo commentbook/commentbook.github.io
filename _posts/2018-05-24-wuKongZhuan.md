@@ -2,9 +2,6 @@
 layout: article
 title:  "悟空传"
 date:   2018-05-24 12:17:01
-categories:
-- 悟空传
-- 非常强烈
 tag:
 - 高武
 

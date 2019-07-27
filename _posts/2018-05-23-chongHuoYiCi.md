@@ -2,9 +2,6 @@
 layout: article
 title:  "重活一次"
 date:   2018-05-23 12:17:02
-categories:
-- 重活一次
-- 非常强烈
 tag:
 - 高武
 

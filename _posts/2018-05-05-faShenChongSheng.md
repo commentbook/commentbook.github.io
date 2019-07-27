@@ -2,9 +2,6 @@
 layout: article
 title:  "法神重生"
 date:   2018-05-05 21:17:57
-categories:
-- 法神重生
-- 非常强烈
 tag:
 - 高武
 

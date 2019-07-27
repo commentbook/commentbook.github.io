@@ -2,9 +2,6 @@
 layout: article
 title:  "三国之绝代军师"
 date:   2018-05-15 12:17:57
-categories:
-- 三国之绝代军师
-- 非常强烈
 tag:
 - 高武
 

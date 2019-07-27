@@ -2,9 +2,6 @@
 layout: article
 title:  "重生民国之中华崛起"
 date:   2018-05-22 12:17:02
-categories:
-- 重生民国之中华崛起
-- 非常强烈
 tag:
 - 高武
 

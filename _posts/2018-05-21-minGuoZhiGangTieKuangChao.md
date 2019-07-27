@@ -2,9 +2,6 @@
 layout: article
 title:  "民国之钢铁狂潮"
 date:   2018-05-21 12:17:02
-categories:
-- 民国之钢铁狂潮
-- 非常强烈
 tag:
 - 高武
 

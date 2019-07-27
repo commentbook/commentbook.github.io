@@ -2,9 +2,6 @@
 layout: article
 title:  "重启末世"
 date:   2018-05-07 12:17:57
-categories:
-- 重启末世
-- 非常强烈
 tag:
 - 高武
 

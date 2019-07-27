@@ -2,9 +2,6 @@
 layout: article
 title:  "资本大唐"
 date:   2018-05-17 21:17:57
-categories:
-- 资本大唐
-- 非常强烈
 tag:
 - 高武
 
