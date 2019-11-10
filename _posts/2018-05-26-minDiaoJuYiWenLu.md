@@ -9,7 +9,7 @@ author: 荒岛书生
 ---
 
 > 本书作者:  耳东水寿  
-> 本书链接:  [起点网链接](https://book.qidian.com/info/1001892792)  
+> 本书链接:  [民调局异闻录](http://www.mindiaojuyiwenlu.com/)  
 > 本书完本时间: 2011-07-20
 
 《民调局异闻录》强烈推荐。
