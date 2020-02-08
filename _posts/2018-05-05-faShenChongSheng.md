@@ -12,7 +12,7 @@ author: 荒岛书生
 > 本书链接:  [起点网链接](https://www.baidu.com/link?url=6cJ5YhMTZtJywt0RkRUGo8IAn7qLXnm7-33TGMidFJKJItQ65kKz16LGyUgAeud-YeBa9XdDsleLePA-ymDQa_&wd=&eqid=ebc41eb800416941000000035e3c21fd)  
 > 本书完本时间: 2015-11-06
 
-《法神重生》强烈推荐。
+《法神重生》一般推荐。
 <!---more--->
 
 
