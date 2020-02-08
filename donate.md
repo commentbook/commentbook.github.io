@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: 捐赠支持
 permalink: /donate/
 date:   2018-03-31 22:22:57

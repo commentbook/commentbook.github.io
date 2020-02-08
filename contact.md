@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "联系我们"
 permalink: /contact/
 date:   2018-03-20 17:22:57

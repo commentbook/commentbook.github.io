@@ -8,15 +8,15 @@ key: wangyou_zhi_zongheng_tianxia_20180526
 tag:
 - 高武
 # cover: /assets/images/cover2.jpg
-article_header:
-  type: cover
-  image:
-    src: /docs/assets/images/cover2.jpg
+# article_header:
+#   type: cover
+#   image:
+#     src: /docs/assets/images/cover2.jpg
 author: 荒岛书生
 ---
 
 > 本书作者:  天堂不寂寞  
-> 本书链接:  [17k小说网链接](http://www.17k.com/book/50551.html)
+> 本书链接:  [17k小说网链接](http://www.17k.com/book/50551.html)  
 > 本书完本时间: 2010-12-31
 
 《网游之纵横天下》强烈推荐。
